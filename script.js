@@ -9,10 +9,6 @@ function handleAnnual() {
       let tmp = sum.innerText * 11;
       sum.innerText = tmp.toFixed(2);
     });
-
-    // for (let i = 0; i < sums.length; i++) {
-    //   sums[i].innerText = parseFloat(sums[i].innerText * 11).toFixed(2);
-    // }
   } else {
     return;
   }
@@ -30,6 +26,7 @@ function handleMonthly() {
 }
 
 //Add eventlistener to both buttons
+// Better to get element by id here - targeting by innerText is unreliable - it's subject to change!
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", (event) => {
     if (event.target.innerText === "Annually") {
