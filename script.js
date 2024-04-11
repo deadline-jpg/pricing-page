@@ -5,9 +5,14 @@ const MONTHLY_LIMIT = 40;
 // Function to handle annual activation
 function handleAnnual() {
   if (parseFloat(sums[0].innerText) < 40) {
-    for (let i = 0; i < sums.length; i++) {
-      sums[i].innerText = parseFloat(sums[i].innerText * 11).toFixed(2);
-    }
+    sums.forEach((sum) => {
+      let tmp = sum.innerText * 11;
+      sum.innerText = tmp.toFixed(2);
+    });
+
+    // for (let i = 0; i < sums.length; i++) {
+    //   sums[i].innerText = parseFloat(sums[i].innerText * 11).toFixed(2);
+    // }
   } else {
     return;
   }
